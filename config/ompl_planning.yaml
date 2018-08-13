@@ -145,7 +145,7 @@ edo:
     - LazyPRMstarkConfigDefault
     - SPARSkConfigDefault
     - SPARStwokConfigDefault
-  projection_evaluator: joints(joint_1,joint_2)
+  projection_evaluator: joints(edo_joint_1,edo_joint_2)
   longest_valid_segment_fraction: 0.005
 eef_group:
   planner_configs:

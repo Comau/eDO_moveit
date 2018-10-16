@@ -75,11 +75,6 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          edo_base_spacer_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
           edo_link_1:
             Alpha: 1
             Show Axes: false
@@ -164,11 +159,6 @@ Visualization Manager:
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
           edo_base_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          edo_base_spacer_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false

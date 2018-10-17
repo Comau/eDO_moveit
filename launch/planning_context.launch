@@ -6,11 +6,11 @@
   <arg name="robot_description" default="robot_description"/>
 
   <!-- Load universal robot description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find edo_sim)/robots/edo_sim.urdf"/>
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="xacro  '$(find edo_description)/urdf/edo.urdf.xacro'"/>
 
   <!-- The semantic description that corresponds to the URDF -->
-  <param name="$(arg robot_description)_semantic" textfile="$(find edo_moveit)/config/edo_sim.srdf" />
-  
+  <param name="$(arg robot_description)_semantic" textfile="$(find edo_moveit)/config/edo.srdf" />
+
   <!-- Load updated joint limits (override information from URDF) -->
   <group ns="$(arg robot_description)_planning">
     <rosparam command="load" file="$(find edo_moveit)/config/joint_limits.yaml"/>
@@ -20,5 +20,5 @@
   <group ns="$(arg robot_description)_kinematics">
     <rosparam command="load" file="$(find edo_moveit)/config/kinematics.yaml"/>
   </group>
-  
+
 </launch>

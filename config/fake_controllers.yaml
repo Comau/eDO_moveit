@@ -9,4 +9,4 @@ controller_list:
       - edo_joint_6
   - name: fake_eef_group_controller
     joints:
-      - edo_joint_ee
+      []

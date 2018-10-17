@@ -4,7 +4,7 @@ moveit_setup_assistant_config:
     relative_path: urdf/edo.urdf.xacro
     xacro_args: ""
   SRDF:
-    relative_path: config/edo_sim.srdf
+    relative_path: config/edo.srdf
   CONFIG:
     author_name: Stefan Profanter
     author_email: profanter@fortiss.org

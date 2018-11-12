@@ -1,10 +1,11 @@
 moveit_setup_assistant_config:
   URDF:
-    package: edo_sim
-    relative_path: robots/edo_sim.urdf
+    package: edo_description
+    relative_path: urdf/edo.urdf.xacro
+    xacro_args: ""
   SRDF:
-    relative_path: config/edo_sim.srdf
+    relative_path: config/edo.srdf
   CONFIG:
-    author_name: Ludovico Russo
-    author_email: ludus.russo@gmail.com
-    generated_timestamp: 1507931074
+    author_name: Stefan Profanter
+    author_email: profanter@fortiss.org
+    generated_timestamp: 1539763481

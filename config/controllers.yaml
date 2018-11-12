@@ -1,5 +1,8 @@
 controller_list:
-  - name: fake_edo_controller
+  - name: ""
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
     joints:
       - edo_joint_1
       - edo_joint_2
@@ -7,6 +10,3 @@ controller_list:
       - edo_joint_4
       - edo_joint_5
       - edo_joint_6
-  - name: fake_eef_group_controller
-    joints:
-      []

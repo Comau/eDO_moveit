@@ -1,0 +1,14 @@
+<launch>
+  <arg name="sim" default="false" />
+  <arg name="debug" default="false" />
+  <arg name="robot_name" default="edo" />
+    
+  <!-- Remap follow_joint_trajectory -->
+  <remap if="$(arg sim)" from="/follow_joint_trajectory" to="/$(arg robot_name)/arm_controller/follow_joint_trajectory"/>
+  <remap if="$(arg sim)" from="/joint_states" to="/$(arg robot_name)/joint_states"/>
+  
+  <!-- Launch moveit -->
+  <include file="$(find edo_moveit)/launch/move_group.launch">
+    <arg name="debug" default="$(arg debug)" />
+  </include>
+</launch>

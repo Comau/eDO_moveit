@@ -28,13 +28,13 @@
   <!-- Trajectory Execution Functionality -->
   <include ns="move_group" file="$(find edo_moveit)/launch/trajectory_execution.launch.xml" if="$(arg allow_trajectory_execution)">
     <arg name="moveit_manage_controllers" value="true" />
-    <arg name="moveit_controller_manager" value="edo_sim" unless="$(arg fake_execution)"/>
+    <arg name="moveit_controller_manager" value="edo" unless="$(arg fake_execution)"/>
     <arg name="moveit_controller_manager" value="fake" if="$(arg fake_execution)"/>
   </include>
 
   <!-- Sensors Functionality -->
   <include ns="move_group" file="$(find edo_moveit)/launch/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
-    <arg name="moveit_sensor_manager" value="edo_sim" />
+    <arg name="moveit_sensor_manager" value="edo" />
   </include>
 
   <!-- Start the actual move_group node/action server -->
@@ -54,13 +54,19 @@
                   " />
     -->
 
-    <!-- inhibit these default MoveGroup capabilities -->
-    <!--
-    <param name="disable_capabilities" value="
-                  move_group/MoveGroupKinematicsService
-                  move_group/ClearOctomapService
-                  " />
-    -->
+    <!-- MoveGroup capabilities to load -->
+    <param name="capabilities" value="move_group/MoveGroupCartesianPathService
+				      move_group/MoveGroupExecuteTrajectoryAction
+				      move_group/MoveGroupKinematicsService
+				      move_group/MoveGroupMoveAction
+				      move_group/MoveGroupPickPlaceAction
+				      move_group/MoveGroupPlanService
+				      move_group/MoveGroupQueryPlannersService
+				      move_group/MoveGroupStateValidationService
+				      move_group/MoveGroupGetPlanningSceneService
+				      move_group/ClearOctomapService
+				      " />
+
 
     <!-- Publish the planning scene of the physical robot so that rviz plugin can know actual robot -->
     <param name="planning_scene_monitor/publish_planning_scene" value="$(arg publish_monitored_planning_scene)" />
